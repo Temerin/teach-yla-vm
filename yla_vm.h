@@ -43,6 +43,7 @@
 #define YLA_VM_ERROR_UNKNOWN_COMMAND (-4)
 #define YLA_VM_ERROR_STACK_EMPTY (-5)
 #define YLA_VM_ERROR_STACK_FULL (-6)
+#define YLA_VM_ERROR_NOT_ARRAY (-7)
 
 /*
 Executable program structure:
