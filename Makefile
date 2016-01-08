@@ -27,6 +27,7 @@ TESTEXE=tests
 OBJ=\
 yla_stack.o\
 yla_vm.o
+yla_array.o
 
 MAINOBJ=yla_vm_main.o
 
