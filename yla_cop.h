@@ -48,6 +48,11 @@ codes of operations
 #define CINS    0x31
 #define COUT	0x32
 
+#define CARP	0x40
+#define CARL	0x41
+#define CARR	0x42
+#define CARC	0x43
+
 #define CHALT	0xff
 
 #endif

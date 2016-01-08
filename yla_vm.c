@@ -26,6 +26,8 @@
 #include "yla_vm.h"
 #include "yla_type.h"
 
+#include "yla_array.h"
+
 
 int yla_vm_get_value(yla_vm *vm, yla_int_type *value);
 
@@ -334,6 +336,36 @@ int yla_vm_do_command_internal(yla_vm *vm, yla_cop_type cop)
 		case CNOP:	
 			break;
 
+		case CARP:
+			if(!yla_vm_stack_push_array(vm)) {
+				return 0;
+			}
+			break;
+
+		case CARL:
+			if (!yla_vm_stack_pull(vm, &op1)) {
+				return 0;
+			}
+			if(!yla_vm_stack_array_add_left(vm, &op1)) {
+				return 0;
+			}
+			break;
+
+		case CARR:
+			if (!yla_vm_stack_pull(vm, &op1)) {
+				return 0;
+			}
+			if(!yla_vm_stack_array_add_right(vm, &op1)) {
+				return 0;
+			}
+			break;
+
+		case CARC:
+			if(!yla_vm_stack_array_concat(vm)) {
+				return 0;
+			}
+			break;
+			
 		case CPUSH:
 			if (!yla_vm_get_value(vm, &res)) {
 				return 0;
